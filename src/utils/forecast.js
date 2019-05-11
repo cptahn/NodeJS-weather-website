@@ -18,8 +18,12 @@ const forecast = (latitude, logitude, callback) => {
             //     location: response.body.timezone,
             //     temperature: current.temperature,
             //     chance: current.precipProbability
-            // })
-            callback(undefined, response.body.daily.data[0].summary + ' It is currently ' + current.temperature + ' degrees out. There is a ' + current.precipProbability + '% chance of rain.')
+            // })            
+            callback(undefined, response.body.daily.data[0].summary + 
+                ' It is currently ' + current.temperature + 
+                ' degrees out. Temperature Height: ' + 
+                response.body.daily.data[0].temperatureHigh + 
+                ' and Temperature Low: ' + response.body.daily.data[0].temperatureLow +  '.  There is a ' + current.precipProbability + '% chance of rain.')
         }
     })
 }
